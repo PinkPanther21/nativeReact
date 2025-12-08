@@ -8,7 +8,9 @@ const Contact = () => {
     <ThemedView style={styles.container}>
       <ThemedText style={styles.title}>contact Page Here</ThemedText>
 
-      <Link href="/" style={styles.link}>Back Home</Link>
+      <Link href="/" style={styles.link}>
+      <ThemedText>Back Home</ThemedText>
+      </Link>
     </ThemedView>
   )
 }
