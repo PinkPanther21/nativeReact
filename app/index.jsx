@@ -1,21 +1,32 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { Link } from 'expo-router'
-import anime from '../assets/img/ani1.png'
+//Themed Coomponents
+import ThemedView from '../components/ThemedView'
+import ThemedLogo from '../components/ThemedLogo'
+import ThemedCard from '../components/ThemedCard'
+import Spacer from '../components/Spacer'
+import ThemedText from '../components/ThemedText'
 
 const Home = () => {
   return (
-    <View style={styles.container}>
-        <Image source={anime} style={{width: 50, height: 50}}/>
-      <Text style={styles.title}>First React Native Practice App</Text>
-      <Text>Trying 😭</Text>
+    <ThemedView style={styles.container}>
+        <ThemedLogo style={{width: 50, height: 50}}/>
+        <Spacer />
+      <ThemedText style={styles.title}>First React Native Practice App</ThemedText>
+      <Spacer height={20}/>
+      <ThemedText>Trying 😭</ThemedText>
 
-      <View style={styles.card}>
-        <Text>This is card here!</Text>
-      </View>
+      <ThemedCard >
+        <ThemedText>This is card here!</ThemedText>
+      </ThemedCard>
 
-      <Link href="/about" style={styles.link}>About</Link>
-      <Link href="/contact" style={styles.link}>Contacts</Link>
-    </View>
+      <Link href="/about" style={styles.link}>
+      <ThemedText>About</ThemedText>
+      </Link>
+      <Link href="/contact" style={styles.link}>
+      <ThemedText>Contacts</ThemedText>
+      </Link>
+    </ThemedView>
   )
 }
 
@@ -24,7 +35,7 @@ export default Home
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#FFFAFA',
+        // backgroundColor: '#FFFAFA',
         alignItems: 'center',
         justifyContent: "center"
     },
