@@ -1,5 +1,7 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Pressable,Text } from 'react-native'
 import { Link } from 'expo-router'
+import { colors } from '../../constants/Colors'
+import ThemedButton from '../../components/ThemedButton'
 //Themed Coomponents
 import ThemedView from '../../components/ThemedView'
 import ThemedLogo from '../../components/ThemedLogo'
@@ -8,12 +10,19 @@ import Spacer from '../../components/Spacer'
 import ThemedText from '../../components/ThemedText'
 
 const Login = () => {
+    const handleSubmit = ()=>{
+        console.log('register form Submitted')
+    } 
   return (
     <ThemedView style={styles.container}>
         <Spacer />
     <ThemedText title={true} style={styles.title}>
     Login to your Account   
     </ThemedText> 
+
+    <ThemedButton onPress={handleSubmit}>
+      <Text style={{color: "#f2f2f2"}}>Login</Text>  
+    </ThemedButton>
 
     <Spacer height={100}/>
     <Link href="/register">
@@ -39,4 +48,5 @@ const styles = StyleSheet.create({
      fontWeight: 'bold',
      fontSize: 22
     },
+    
 })
